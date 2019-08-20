@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="dashboard.js"></script>
 
     <title>Dashboard</title>
 </head>
@@ -44,7 +44,7 @@
             <input id="showSearch" class="form-control my-0 py-1 transparent-border" type="text"
                 placeholder="Search for your show" aria-label="Search">
             <div class="input-group-append">
-                <span class="input-group-text white lighten-3" id="basic-text1"><i class="fas fa-search text-white"
+                <span class="input-group-text white lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
                         aria-hidden="true"></i></span>
             </div>
         </div>
@@ -53,7 +53,46 @@
         <br>
         <br>
         <h1 strong>Your Favorite shows up Next:</h1>
-        <div id="upcoming"></div>
+        <div id="upcoming">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <!-- The scope attribute specifies that this is a header for a column -->
+                        <th scope="col">Show Name</th>
+                        <th scope="col">Season</th>
+                        <th scope="col">Episode #</th>
+                        <th scope="col">Episode Title</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <!-- <div id="card">
+                <div className="content">
+                    <ul>
+                        <li id="image">
+                            <strong>Pic</strong>
+                        </li>
+                        <li id="name">
+                            <strong>Name:</strong>
+                        </li>
+                        <li id="occupation">
+                            <strong>Season:</strong>
+                        </li>
+                        <li id="location">
+                            <strong>Episode:</strong>
+                        </li>
+                        <li id="title">
+                            <strong>Episode Title:</strong>
+                        </li>
+                        <li id="date">
+                            <strong>Date:</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
     </div>
     <!--/.Navbar -->
     <script type="text/javascript"></script>
