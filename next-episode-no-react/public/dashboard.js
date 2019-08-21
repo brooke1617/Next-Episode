@@ -5,6 +5,7 @@ var tvImages = {
 
 $(document).ready(function () {
     var loggedUser = JSON.parse(sessionStorage.getItem("user"));
+    $("#welcome").text("Welcome " + loggedUser.userName);
     var userShows = loggedUser.shows;
     userShows.forEach(function (show) {
         console.log(show);
