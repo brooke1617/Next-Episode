@@ -12,9 +12,10 @@ $(document).ready(function () {
         $.ajax({
             url: "/dashboard/load",
             method: "POST",
-            data: show,
+            dataType: "json",
+            data: { show: show },
         }).then(function (response) {
-            // console.log(response);
+            //console.log(response);
             var tRow = $("<tr>");
 
 
@@ -29,6 +30,8 @@ $(document).ready(function () {
 
             $("tbody").append(tRow);
 
+        }).catch(function (err) {
+            console.log(err);
         })
     })
 });
