@@ -19,14 +19,14 @@ $(document).ready(function () {
         $.ajax({
             url: "/api/user/create",
             method: "POST",
-            data: user
+            data: user,
         }).then(function (result) {
-            if (result) {
-                window.location = "/dashboard"
-                //(res.sendFile(__dirname + "/dashboard.html"));
-                console.log(result);
-            }
-            sessionStorage.setItem("user", JSON.stringify(data));
+            sessionStorage.setItem("user", JSON.stringify(result));
+            window.location.href = "/dashboard"
+            //(res.sendFile(__dirname + "/dashboard.html"));
+            console.log(result);
+
+
         })
 
 
@@ -48,12 +48,7 @@ $(document).ready(function () {
             data: user,
         }).then(function (result) {
             console.log(result);
-            // if (error) {
-            //     console.log(error);
 
-            // }
-            // else {
-            // console.log(result);
             sessionStorage.setItem("user", JSON.stringify(result));
             window.location.href = "/dashboard"
             // }

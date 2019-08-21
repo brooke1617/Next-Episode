@@ -2,6 +2,7 @@ var unirest = require("unirest");
 var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
+var show_array = [];
 const User = require("./models/users");
 
 
@@ -30,7 +31,7 @@ var test = function (request, response) {
             "image": "",
 
         }
-        if (res.body.episode.title) {
+        if (res.body.episode) {
 
             User.findOneAndUpdate(
                 { email: request.body.email },
@@ -49,6 +50,25 @@ var test = function (request, response) {
     });
 }
 app.post("/dashboard", test);
+
+app.post("/dashboard/load", function (request, response) {
+    console.log("TESST" + request);
+    var req = unirest("GET", `https://frecar-epguides-api-v1.p.rapidapi.com/${show}/next/`);
+    console.log(show)
+    req.headers({
+        "x-rapidapi-host": "frecar-epguides-api-v1.p.rapidapi.com",
+        "x-rapidapi-key": "15cacc2175msh52cf4f4aa8efd48p166945jsnb4864ae31222"
+    });
+
+
+    req.end(function (res) {
+        // if (res.error) throw new Error(res.error);
+        //console.log(res.body);
+        response.json(res.body);
+
+    });
+
+});
 
 
 app.post("/dashboard/add", function (req, res) {
