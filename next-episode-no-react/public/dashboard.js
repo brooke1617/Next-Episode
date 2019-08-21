@@ -2,9 +2,9 @@ var show = $("#showSearch");
 var tvImages = {
     "power": ""
 }
-
+var loggedUser = JSON.parse(sessionStorage.getItem("user"));
 $(document).ready(function () {
-    var loggedUser = JSON.parse(sessionStorage.getItem("user"));
+    // var loggedUser = JSON.parse(sessionStorage.getItem("user"));
     $("#welcome").text("Welcome " + loggedUser.userName);
     var userShows = loggedUser.shows;
     userShows.forEach(function (show) {
@@ -36,7 +36,7 @@ $(document).ready(function () {
     })
 });
 
-$("#add").on("click", function () {
+$(document).on("click", "#add", function () {
     console.log("click");
     var postData = {
         show: $("#showSearch").val(),
@@ -46,6 +46,7 @@ $("#add").on("click", function () {
     $.ajax({
         url: "/dashboard",
         method: "POST",
+        dataType: "JSON",
         data: postData
     }).then(function (response) {
         console.log(response);
