@@ -49,12 +49,12 @@ $(document).on("click", "#add", function () {
         dataType: "JSON",
         data: postData
     }).then(function (response) {
-        console.log(response);
-        console.log(response.episode.show.epguide_name);
-        console.log(response.episode.season);
-        console.log(response.episode.number);
-        console.log(response.episode.title);
-        console.log(response.episode.release_date);
+        // console.log(response);
+        // console.log(response.episode.show.epguide_name);
+        // console.log(response.episode.season);
+        // console.log(response.episode.number);
+        // console.log(response.episode.title);
+        // console.log(response.episode.release_date);
         if (response.hasOwnProperty("error")) {
             alert("show not found")
         } else {
