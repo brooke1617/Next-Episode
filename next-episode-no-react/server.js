@@ -52,9 +52,9 @@ var test = function (request, response) {
 app.post("/dashboard", test);
 
 app.post("/dashboard/load", function (request, response) {
-    console.log("TESST" + request);
-    var req = unirest("GET", `https://frecar-epguides-api-v1.p.rapidapi.com/${show}/next/`);
-    console.log(show)
+    console.log("TESST" + JSON.stringify(request.body));
+    var req = unirest("GET", `https://frecar-epguides-api-v1.p.rapidapi.com/${request.body.show}/next/`);
+    //console.log(show)
     req.headers({
         "x-rapidapi-host": "frecar-epguides-api-v1.p.rapidapi.com",
         "x-rapidapi-key": "15cacc2175msh52cf4f4aa8efd48p166945jsnb4864ae31222"
