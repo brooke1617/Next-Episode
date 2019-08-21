@@ -7,7 +7,7 @@ $(document).ready(function () {
     ////////////////////////////////SignUp///////////////////////////////////
 
     $("#signUpButton").on("click", function () {
-        event.preventDefault();
+        // event.preventDefault();
         let user = {
             userName: $("#userNameSignUp").val().trim(),
             email: $("#email").val().trim(),
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 
         })
-
+        alert("Thank you for signing up! Please log in.");
 
 
     })
